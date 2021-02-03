@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+<body>
+<script>
+    function checkMouseEnter(button) {
+        nickname = document.querySelector('.start_game>input').value;
+        button.disabled = nickname === "";
+    }
+
+    function enableBtn(button) {
+        button.disabled = false
+    }
+</script>
+<div class="losing"></div>
+<div class="start_game">
+    <input placeholder="Введите ник" type="text" name="">
+    <button id="startGameBtn" onmouseleave="enableBtn(this)" onmouseenter="checkMouseEnter(this)" onclick="hideForm()">
+        Начать игру
+    </button>
+</div>
+<div hidden class="game">
+    <p id="hearts"></p>
+    <p id="score">Cчёт: 0</p>
+</div>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
